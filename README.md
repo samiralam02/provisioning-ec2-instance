@@ -1,6 +1,6 @@
 # Provisioning an AWS EC2 Linux Server
 
-This document provides a step-by-step guide to provision an AWS EC2 Linux server and connect to it using SSH. It also includes instructions for documenting the process and uploading it to GitHub.
+This document provides a step-by-step guide to provision an AWS EC2 Linux server and connect to it using SSH.
 
 --
 
@@ -31,6 +31,7 @@ This document provides a step-by-step guide to provision an AWS EC2 Linux server
 ### **Configure Instance Details**
 - Use default settings or customize as needed.
 - Add tags for easier identification (e.g., `Name: MyLinuxServer`).
+![Instance Creation](screenshots/instance_name.png)
 
 ### **Add Storage**
 - Use default storage (8GB) or increase as necessary.
@@ -42,11 +43,14 @@ This document provides a step-by-step guide to provision an AWS EC2 Linux server
    - **Protocol**: TCP
    - **Port Range**: 22
    - **Source**: Choose `My IP` (recommended) or `Anywhere (0.0.0.0/0)` for broader access.
+![Security Group Rules](screenshots/security_groups.png)
 
 ### **Review and Launch**
 1. Review the instance details and click **Launch**.
 2. Select an existing key pair or create a new one.
 3. Download the private key file (`.pem`) and store it securely.
+![Key Pair Creation](screenshots/keypair.png)
+![Review and Launch](screenshots/instance_launched.png)
 
 ---
 
@@ -66,7 +70,7 @@ This document provides a step-by-step guide to provision an AWS EC2 Linux server
      ```bash
      ssh -i <path-to-key> ubuntu@<public-IP>
      ```
-
+![SSH Success](screenshots/ssh_success.png)
 ### **Troubleshooting SSH Issues**
 - Ensure the private key file has the correct permissions:
   ```bash
